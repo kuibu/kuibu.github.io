@@ -1,12 +1,7 @@
-extends _partial/layout
-
-prepend site_title
-    != page.title + " · "
-
-block content
-    include _mixin/post
-    +postList(page)
-    aside.sidebar
-        include _sidebar/tag
-        include _sidebar/post
-        //- include _sidebar/toc
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> postName · Jaco</title><meta name="description" content="Scala | NLP | Spark | DeepLearning"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/favicon.png"><link rel="stylesheet" href="/css/jekyll.css"><!--[if lt IE 9]>
+<script src="js/html5shiv.min.js"></script>
+<script src="js/respond.min.js"></script>
+<![endif]--></head><body><header class="row-flex-row limit-width vh-center"><a href="/" class="logo"><img src="/favicon.png"></a><nav><ul class="nav-list"><li class="nav-list-item"><a href="/" class="nav-link">主页</a></li><li class="nav-list-item"><a href="/archives/" class="nav-link active">   博客</a></li><li class="nav-list-item"><a href="/atom.xml" class="nav-link">rss</a></li><li class="nav-list-item"><a href="https://github.com/xxxxx" target="_blank" class="nav-link">   github</a></li></ul></nav></header><div class="container limit-width"><section class="row-flex-row"><div class="post"><article class="post-block"><h2 class="post-title"><a href="/2016/01/29/postName-1/" class="post-title-link">postName</a></h2><div class="post-meta"><div class="post-time">星期六, 一月 30日 2016</div></div><div class="post-content"></div></article><div class="pagination"><a href="/2016/01/29/hello-world/" class="pagination-prev">PREV</a><a href="/2016/01/29/postName/" class="pagination-next">NEXT</a></div></div><aside class="sidebar"><h3>最新文章</h3><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/01/29/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/29/postName-1/">postName</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/29/postName/">dengfei</a></li></ul></aside></section></div><div class="extra"></div><footer class="footer"><div class="row-flex-row limit-width vh-center"><div class="copyright"><P>© 2016 <a href="/">Jaco(JiChaoLi)</P></div><div class="power"><p><a href="http://pinggod.com/">Sean Sun</a>, 
+<a href="https://hexo.io">Hexo</a>, 
+<a href="https://github.com/">GitHub</a>, 
+<a href="https://jekyllrb.com/">Jekyll</a></p></div></div></footer><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script><script>var _hmt = _hmt || [];(function() {var hm = document.createElement("script");hm.src = "//hm.baidu.com/hm.js?a36e15d9e2adec9a21fcdd9f686b1ed2";var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s);})();</script><script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script></body></html>
