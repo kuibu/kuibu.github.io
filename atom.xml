@@ -4,7 +4,7 @@
   <subtitle><![CDATA[搬砖科学家]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2016-01-29T13:58:04.000Z</updated>
+  <updated>2016-01-30T05:20:37.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -13,6 +13,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Scala Questions]]></title>
+    <link href="http://yoursite.com/2016/01/30/Scala-Questions/"/>
+    <id>http://yoursite.com/2016/01/30/Scala-Questions/</id>
+    <published>2016-01-30T05:18:37.000Z</published>
+    <updated>2016-01-30T05:20:37.000Z</updated>
+    <content type="html"><![CDATA[<p>java 写的<em>Iterable</em>对象不能直接使用scala中的foreach语句遍历元素, 需要进行如下转换后才能使用foreach语句：<br> 假如使用Java定义了一个实现了<em>Iterable</em>接口的数据类型<em>Stack</em></p>
+ <figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> scala.collection.<span class="type">JavaConverters</span>._</span><br><span class="line"><span class="keyword">val</span> sJava = <span class="keyword">new</span> <span class="type">Stack</span>[<span class="type">Integer</span>]</span><br><span class="line">... <span class="comment">// 对sJava  进行push、pop等操作。&lt;注&gt;转换后的sScala并不能使用sJava中的方法，操作必须在sJava这里进行。</span></span><br><span class="line"><span class="keyword">val</span> sScala = sJava.asScala</span><br><span class="line"><span class="keyword">for</span>( s &lt;- sScala)&#123;</span><br><span class="line">   ...</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<p> }</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>java 写的<em>Iterable</em>对象不能直接使用scala中的foreach语句遍历元素, 需要进行如下转换后才能使用foreach语句：<br> 假如使用Java定义了一个实现了<em>Iterable</em>接口的数据类型<em>Stack</em><]]>
+    </summary>
+    
+      <category term="Scala" scheme="http://yoursite.com/tags/Scala/"/>
+    
+      <category term="Scala" scheme="http://yoursite.com/categories/Scala/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[postName]]></title>

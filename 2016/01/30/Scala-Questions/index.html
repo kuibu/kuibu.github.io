@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Scala," />
 
 
 
@@ -59,19 +59,19 @@
 
 
 
-<meta name="description" content="#deng1.我行过很多地方的桥，看过许多次数的云，喝过许多种类的酒，却只爱过一个正当最好年龄的人。2.在一群星星中间隐藏着脸庞。3.春风十里不如你。三鲜丸子四喜丸子豆腐丸子红炖肉白炖肉樱桃肉马牙肉酱豆腐肉坛子肉罐儿肉元宝肉福禄肉红肘子白肘子水晶肘子蜜蜡肘子烧烀肘子扒肘条儿蒸羊肉烧羊肉五香羊肉酱羊肉氽三样儿爆三样儿烧紫盖儿炖鸭杂儿熘白杂碎三鲜鱼翅栗子鸡尖氽活鲤鱼板鸭筒子鸡，都不如你。">
+<meta name="description" content="java 写的Iterable对象不能直接使用scala中的foreach语句遍历元素, 需要进行如下转换后才能使用foreach语句： 假如使用Java定义了一个实现了Iterable接口的数据类型Stack
+ 12345678import scala.collection.JavaConverters._val sJava = new Stack[Integer]... // 对sJava">
 <meta property="og:type" content="article">
-<meta property="og:title" content="dengfei">
-<meta property="og:url" content="http://yoursite.com/2016/01/29/postName/index.html">
+<meta property="og:title" content="Scala Questions">
+<meta property="og:url" content="http://yoursite.com/2016/01/30/Scala-Questions/index.html">
 <meta property="og:site_name" content="Jaco">
-<meta property="og:description" content="#deng1.我行过很多地方的桥，看过许多次数的云，喝过许多种类的酒，却只爱过一个正当最好年龄的人。2.在一群星星中间隐藏着脸庞。3.春风十里不如你。三鲜丸子四喜丸子豆腐丸子红炖肉白炖肉樱桃肉马牙肉酱豆腐肉坛子肉罐儿肉元宝肉福禄肉红肘子白肘子水晶肘子蜜蜡肘子烧烀肘子扒肘条儿蒸羊肉烧羊肉五香羊肉酱羊肉氽三样儿爆三样儿烧紫盖儿炖鸭杂儿熘白杂碎三鲜鱼翅栗子鸡尖氽活鲤鱼板鸭筒子鸡，都不如你。">
-<meta property="og:image" content="http://hdn.xnimg.cn/photos/hdn221/20140407/2145/h_large_vDw5_56170000e1bf111a.jpg">
-<meta property="og:image" content="http://hdn.xnimg.cn/photos/hdn421/20141031/2205/h_large_E3ZL_27dd0006c2991986.jpg">
-<meta property="og:image" content="http://hdn.xnimg.cn/photos/hdn321/20140606/2310/h_large_uTOZ_27d100021a7e1986.jpg">
-<meta property="og:updated_time" content="2016-01-29T14:35:34.000Z">
+<meta property="og:description" content="java 写的Iterable对象不能直接使用scala中的foreach语句遍历元素, 需要进行如下转换后才能使用foreach语句： 假如使用Java定义了一个实现了Iterable接口的数据类型Stack
+ 12345678import scala.collection.JavaConverters._val sJava = new Stack[Integer]... // 对sJava">
+<meta property="og:updated_time" content="2016-01-30T05:20:37.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="dengfei">
-<meta name="twitter:description" content="#deng1.我行过很多地方的桥，看过许多次数的云，喝过许多种类的酒，却只爱过一个正当最好年龄的人。2.在一群星星中间隐藏着脸庞。3.春风十里不如你。三鲜丸子四喜丸子豆腐丸子红炖肉白炖肉樱桃肉马牙肉酱豆腐肉坛子肉罐儿肉元宝肉福禄肉红肘子白肘子水晶肘子蜜蜡肘子烧烀肘子扒肘条儿蒸羊肉烧羊肉五香羊肉酱羊肉氽三样儿爆三样儿烧紫盖儿炖鸭杂儿熘白杂碎三鲜鱼翅栗子鸡尖氽活鲤鱼板鸭筒子鸡，都不如你。">
+<meta name="twitter:title" content="Scala Questions">
+<meta name="twitter:description" content="java 写的Iterable对象不能直接使用scala中的foreach语句遍历元素, 需要进行如下转换后才能使用foreach语句： 假如使用Java定义了一个实现了Iterable接口的数据类型Stack
+ 12345678import scala.collection.JavaConverters._val sJava = new Stack[Integer]... // 对sJava">
 
 
 
@@ -89,7 +89,7 @@
   };
 </script>
 
-  <title> dengfei | Jaco </title>
+  <title> Scala Questions | Jaco </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -209,7 +209,7 @@
             
             
               
-                dengfei
+                Scala Questions
               
             
           </h1>
@@ -221,11 +221,30 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-01-29T21:57:43+08:00" content="2016-01-29">
-              2016-01-29
+            <time itemprop="dateCreated" datetime="2016-01-30T13:18:37+08:00" content="2016-01-30">
+              2016-01-30
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Scala/" itemprop="url" rel="index">
+                    <span itemprop="name">Scala</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
@@ -245,63 +264,35 @@
 
       
       
-        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-          
-          
-            <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox"
-                 href="http://hdn.xnimg.cn/photos/hdn221/20140407/2145/h_large_vDw5_56170000e1bf111a.jpg" rel="gallery_cik0oglol00086nyx4xwbp0m2"
-                 itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
-                <img src="http://hdn.xnimg.cn/photos/hdn221/20140407/2145/h_large_vDw5_56170000e1bf111a.jpg" itemprop="contentUrl"/>
-              </a>
-            
-          
-            
-              <a class="post-gallery-img fancybox"
-                 href="http://hdn.xnimg.cn/photos/hdn421/20141031/2205/h_large_E3ZL_27dd0006c2991986.jpg" rel="gallery_cik0oglol00086nyx4xwbp0m2"
-                 itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
-                <img src="http://hdn.xnimg.cn/photos/hdn421/20141031/2205/h_large_E3ZL_27dd0006c2991986.jpg" itemprop="contentUrl"/>
-              </a>
-            
-          
-            
-              <a class="post-gallery-img fancybox"
-                 href="http://hdn.xnimg.cn/photos/hdn321/20140606/2310/h_large_uTOZ_27d100021a7e1986.jpg" rel="gallery_cik0oglol00086nyx4xwbp0m2"
-                 itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
-                <img src="http://hdn.xnimg.cn/photos/hdn321/20140606/2310/h_large_uTOZ_27d100021a7e1986.jpg" itemprop="contentUrl"/>
-              </a>
-            </div>
-          
-
-          
-          
-        </div>
-      
 
       
-        <p>#deng<br>1.我行过很多地方的桥，看过许多次数的云，喝过许多种类的酒，却只爱过一个正当最好年龄的人。<br><br>2.在一群星星中间隐藏着脸庞。<br>3.春风十里不如你。三鲜丸子四喜丸子豆腐丸子红炖肉白炖肉樱桃肉马牙肉酱豆腐肉坛子肉罐儿肉元宝肉福禄肉红肘子白肘子水晶肘子蜜蜡肘子烧烀肘子扒肘条儿蒸羊肉烧羊肉五香羊肉酱羊肉氽三样儿爆三样儿烧紫盖儿炖鸭杂儿熘白杂碎三鲜鱼翅栗子鸡尖氽活鲤鱼板鸭筒子鸡，都不如你。</p>
+        <p>java 写的<em>Iterable</em>对象不能直接使用scala中的foreach语句遍历元素, 需要进行如下转换后才能使用foreach语句：<br> 假如使用Java定义了一个实现了<em>Iterable</em>接口的数据类型<em>Stack</em></p>
+ <figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> scala.collection.<span class="type">JavaConverters</span>._</span><br><span class="line"><span class="keyword">val</span> sJava = <span class="keyword">new</span> <span class="type">Stack</span>[<span class="type">Integer</span>]</span><br><span class="line">... <span class="comment">// 对sJava  进行push、pop等操作。&lt;注&gt;转换后的sScala并不能使用sJava中的方法，操作必须在sJava这里进行。</span></span><br><span class="line"><span class="keyword">val</span> sScala = sJava.asScala</span><br><span class="line"><span class="keyword">for</span>( s &lt;- sScala)&#123;</span><br><span class="line">   ...</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<p> }</p>
 
       
     </div>
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Scala/" rel="tag">#Scala</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/10/21/demo/" rel="next" title="辨析 Sass 中的 Map 和 List">
-                <i class="fa fa-chevron-left"></i> 辨析 Sass 中的 Map 和 List
+              <a href="/2016/01/29/postName-1/" rel="next" title="postName">
+                <i class="fa fa-chevron-left"></i> postName
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/01/29/postName-1/" rel="prev" title="postName">
-                postName <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
