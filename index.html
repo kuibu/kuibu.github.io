@@ -1,83 +1,280 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="chrome=1">
   
   <title>Jaco</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  
-    <meta name="author" content="Jaco(JiChaoLi)">
-  
-  
-  <meta name="description" content="Scala | NLP | Spark">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Scala | NLP | Spark | DeepLearning">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Jaco">
 <meta property="og:url" content="http://yoursite.com/index.html">
 <meta property="og:site_name" content="Jaco">
-<meta property="og:description" content="Scala | NLP | Spark">
+<meta property="og:description" content="Scala | NLP | Spark | DeepLearning">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Jaco">
-<meta name="twitter:description" content="Scala | NLP | Spark">
+<meta name="twitter:description" content="Scala | NLP | Spark | DeepLearning">
   
-    <link rel="alternate" href="/atom.xml" title="Jaco" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="Jaco" type="application/atom+xml">
   
   
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" type="text/css">
   
   <link rel="stylesheet" href="/css/style.css" type="text/css">
-  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   
+    
+    
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: true,
+          isPost: false,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
 </head>
-
 <body>
-  <div class="wrapper">
-    <header id="header">
-  <div class="title">
-    <h1><a href="/">Jaco</a></h1>
-    <p><a href="/">未来的计算机科学家</a></p>
-  </div>
-  <nav class="nav">
-    <ul>
-      
-        <li><a href="/">Home</a></li>
-      
-        <li><a href="/archives">Archives</a></li>
-      
-      
-        <li><a href="/atom.xml">RSS</a></li>
-      
-    </ul>
-    <div class="clearfix"></div>
-  </nav>
-  <div class="clearfix"></div>
-</header>
-    <div class="content">
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/head.jpg" class="js-avatar">
+            
+        </a>
 
+        <hgroup>
+          <h1 class="header-author"><a href="/">Jaco(JiChaoLi)</a></h1>
+        </hgroup>
 
+        
+        <p class="header-subtitle">搬砖家</p>
+        
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
 
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/Home">博客首页</a></li>
+                        
+                            <li><a href="/works">作品展示</a></li>
+                        
+                            <li><a href="/about">留言打卡</a></li>
+                        
+                            <li><a href="/FrontEndGuide">前端导航</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <li id="mail"><a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail"></a></li>
+                            
+                                <li id="github"><a class="github" target="_blank" href="https://github.com/luuman" title="github"></a></li>
+                            
+                                <li id="zhihu"><a class="zhihu" target="_blank" href="https://www.zhihu.com/people/luuman" title="zhihu"></a></li>
+                            
+                                <li id="weibo"><a class="weibo" target="_blank" href="http://weibo.com/lishangmou" title="weibo"></a></li>
+                            
+                                <li id="google"><a class="google" target="_blank" href="http://i.youku.com/shangmou" title="google"></a></li>
+                            
+                                <li id="twitter"><a class="twitter" target="_blank" href="http://twitter.com/luuman" title="twitter"></a></li>
+                            
+                                <li id="facebook"><a class="facebook" target="_blank" href="/#" title="facebook"></a></li>
+                            
+                                <li id="rss"><a class="rss" target="_blank" href="/atom.xml" title="rss"></a></li>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://MOxFIVE.github.io/">MOxFIVE</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.vsay.cn/">DoubleV</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.ccwebsite.com/">兮兮</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.dandyweng.com/">翁天信</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.plqblog.com/views/index.php">潘利强</a>
+                    
+                    </div>
+                </section>
+                
 
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Jaco(JiChaoLi)</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Jaco(JiChaoLi)</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">搬砖家</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/Home">博客首页</a></li>
+                
+                    <li><a href="/works">作品展示</a></li>
+                
+                    <li><a href="/about">留言打卡</a></li>
+                
+                    <li><a href="/FrontEndGuide">前端导航</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <li id="mail"><a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail"></a></li>
+                            
+                                <li id="github"><a class="github" target="_blank" href="https://github.com/luuman" title="github"></a></li>
+                            
+                                <li id="zhihu"><a class="zhihu" target="_blank" href="https://www.zhihu.com/people/luuman" title="zhihu"></a></li>
+                            
+                                <li id="weibo"><a class="weibo" target="_blank" href="http://weibo.com/lishangmou" title="weibo"></a></li>
+                            
+                                <li id="google"><a class="google" target="_blank" href="http://i.youku.com/shangmou" title="google"></a></li>
+                            
+                                <li id="twitter"><a class="twitter" target="_blank" href="http://twitter.com/luuman" title="twitter"></a></li>
+                            
+                                <li id="facebook"><a class="facebook" target="_blank" href="/#" title="facebook"></a></li>
+                            
+                                <li id="rss"><a class="rss" target="_blank" href="/atom.xml" title="rss"></a></li>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap">
   
-    <article class="post">
-  <header>
-    
-      <div class="icon"></div>
-      <a href="/2016/01/29/hello-world/">
-  <time datetime="2016-01-29T14:01:39.000Z">
-    2016-01-29
-  </time>
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/01/29/hello-world/" class="article-date">
+      <time datetime="2016-01-29T14:01:39.000Z" itemprop="datePublished">2016-01-29</time>
 </a>
-    
-    
+    </div>
   
-    <h1 class="title"><a href="/2016/01/29/hello-world/">Hello World</a></h1>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/29/hello-world/">Hello World</a>
+    </h1>
   
 
-  </header>
-  
-  <div class="entry">
+      </header>
+      
     
-      <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
 <h2 id="Quick_Start"><a href="#Quick_Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create_a_new_post"><a href="#Create_a_new_post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 <p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
 <h3 id="Run_server"><a href="#Run_server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
@@ -87,139 +284,211 @@
 <h3 id="Deploy_to_remote_sites"><a href="#Deploy_to_remote_sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
 
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
     
   </div>
-  <footer class="end-sep">
-    
-      
-      
-    
-    <div class="clearfix"></div>
-  </footer>
+  
 </article>
 
 
+
+
+
+
+
+
+
   
-    <article class="hi">
-  <header>
-    
-      <div class="icon"></div>
-      <a href="/2016/01/29/postName-1/">
-  <time datetime="2016-01-29T13:58:04.000Z">
-    2016-01-29
-  </time>
+    <article id="hi-postName-1" class="article article-type-hi" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/01/29/postName-1/" class="article-date">
+      <time datetime="2016-01-29T13:58:04.000Z" itemprop="datePublished">2016-01-29</time>
 </a>
-    
-    
+    </div>
   
-    <h1 class="title"><a href="/2016/01/29/postName-1/">postName</a></h1>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/29/postName-1/">postName</a>
+    </h1>
   
 
-  </header>
-  
-  <div class="entry">
-    
+      </header>
       
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
     
   </div>
-  <footer class="end-sep">
-    
-      
-      
-    
-    <div class="clearfix"></div>
-  </footer>
+  
 </article>
 
 
+
+
+
+
+
+
+
   
-    <article class="photo">
-  <header>
-    
-      <div class="icon"></div>
-      <a href="/2016/01/29/postName/">
-  <time datetime="2016-01-29T13:57:43.000Z">
-    2016-01-29
-  </time>
+    <article id="photo-postName" class="article article-type-photo" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/01/29/postName/" class="article-date">
+      <time datetime="2016-01-29T13:57:43.000Z" itemprop="datePublished">2016-01-29</time>
 </a>
-    
-    
+    </div>
   
-    <h1 class="title"><a href="/2016/01/29/postName/">dengfei</a></h1>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/29/postName/">dengfei</a>
+    </h1>
   
 
-  </header>
-  
-    <div class="gallery">
-  <div class="photoset">
-    
-      
-        <img src="http://hdn.xnimg.cn/photos/hdn221/20140407/2145/h_large_vDw5_56170000e1bf111a.jpg">
-      
-        <img src="http://hdn.xnimg.cn/photos/hdn421/20141031/2205/h_large_E3ZL_27dd0006c2991986.jpg">
-      
-        <img src="http://hdn.xnimg.cn/photos/hdn321/20140606/2310/h_large_uTOZ_27d100021a7e1986.jpg">
+      </header>
       
     
-  </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
-</div>
-  
-  <div class="entry">
-    
-      <p>#deng<br>1.我行过很多地方的桥，看过许多次数的云，喝过许多种类的酒，却只爱过一个正当最好年龄的人。<br><br>2.在一群星星中间隐藏着脸庞。<br>3.春风十里不如你。三鲜丸子四喜丸子豆腐丸子红炖肉白炖肉樱桃肉马牙肉酱豆腐肉坛子肉罐儿肉元宝肉福禄肉红肘子白肘子水晶肘子蜜蜡肘子烧烀肘子扒肘条儿蒸羊肉烧羊肉五香羊肉酱羊肉氽三样儿爆三样儿烧紫盖儿炖鸭杂儿熘白杂碎三鲜鱼翅栗子鸡尖氽活鲤鱼板鸭筒子鸡，都不如你。</p>
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>#deng<br>1.我行过很多地方的桥，看过许多次数的云，喝过许多种类的酒，却只爱过一个正当最好年龄的人。<br><br>2.在一群星星中间隐藏着脸庞。<br>3.春风十里不如你。三鲜丸子四喜丸子豆腐丸子红炖肉白炖肉樱桃肉马牙肉酱豆腐肉坛子肉罐儿肉元宝肉福禄肉红肘子白肘子水晶肘子蜜蜡肘子烧烀肘子扒肘条儿蒸羊肉烧羊肉五香羊肉酱羊肉氽三样儿爆三样儿烧紫盖儿炖鸭杂儿熘白杂碎三鲜鱼翅栗子鸡尖氽活鲤鱼板鸭筒子鸡，都不如你。</p>
 
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
     
   </div>
-  <footer class="end-sep">
-    
-      
-      
-    
-    <div class="clearfix"></div>
-  </footer>
+  
 </article>
 
 
-  
 
-  <nav id="pagination">
-  
-  
-  <div class="clearfix"></div>
-</nav>
 
-</div>
-  </div>
-  <footer id="footer"><div class="copyright">
+
+
+
+
+
   
-  &copy; 2016 <a href="/">Jaco(JiChaoLi)</a>
   
 </div>
-<div class="theme-copyright">
-  Theme by <a href="https://github.com/orderedlist" target="_blank">orderedlist</a>
-   | 
-  Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2016 Jaco(JiChaoLi)
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a> by luuman
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >海贼到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                //$("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
 </div>
-<div class="clearfix"></div></footer>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
-<script src="/js/scale.fix.js"></script>
-<script src="/js/jquery.imagesloaded.min.js"></script>
-<script src="/js/gallery.js"></script>
-
-
-
-
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-  (function($){
-    $('.fancybox').fancybox();
-  })(jQuery);
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
 </script>
 
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
 </body>
 </html>
