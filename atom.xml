@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title><![CDATA[Jaco]]></title>
-  <subtitle><![CDATA[搬砖家]]></subtitle>
+  <subtitle><![CDATA[搬砖科学家]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
   <updated>2016-01-29T13:58:04.000Z</updated>
