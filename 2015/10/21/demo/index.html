@@ -1,93 +1,84 @@
-
- <!DOCTYPE HTML>
-<html lang="zh-Hans">
+<!DOCTYPE HTML>
+<html>
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
   
-    <title>辨析 Sass 中的 Map 和 List | Jaco</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
-    
+  <title>辨析 Sass 中的 Map 和 List | Jaco</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  
     <meta name="author" content="Jaco">
-    
+  
+  
     <meta name="description" content="如果你使用过 Sass 3.3 之前的版本，那么你一定对那段时光颇有感触，那时候没有现如今这么好的条件，那时候的 Map 还只能用多重列表（lists of list）来模拟。多重列表可以实现复杂数据的嵌套定义，但却不是以键值对的形式实现的，所有当我们需要获取其中特定的某一项时就会比较麻烦。Map 这种数据类型天生就是基于键值对的形式，非常便于组织数据。
-自从可以使用 Map 之后，开发者们开始毫无顾忌地定义 Map 存储数据，比如断点宽度、颜色值、栅格布局等等响应式排版的细节，都被一股脑的塞进了 Map 中。
-那么，有了 Map 之后，我们还有必要使用 List 吗？可能某些人会觉得为了保持向后兼容应该继续使用多重列表模拟 Map，因为可能有些开发者仍然在使用老版本的 Sass 编译器，但实际上，这是多此一举了，Sass 的版本通常由 package.json 或者其他同类型的项目配置文件所控制，往往只需一条命令（gem update sass）即可更新 Sass 的版本，因此基本上无需考虑对老版本的兼容问题。">
-    
-    
-    
-    
-    
-    <link rel="icon" href="/img/favicon.ico">
-    
-    
-    <link rel="apple-touch-icon" href="/img/pacman.jpg">
-    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
-    
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
+自从可以使用 Map 之后，开发者们开始毫">
+  
+  <meta name="description" content="如果你使用过 Sass 3.3 之前的版本，那么你一定对那段时光颇有感触，那时候没有现如今这么好的条件，那时候的 Map 还只能用多重列表（lists of list）来模拟。多重列表可以实现复杂数据的嵌套定义，但却不是以键值对的形式实现的，所有当我们需要获取其中特定的某一项时就会比较麻烦。Map 这种数据类型天生就是基于键值对的形式，非常便于组织数据。
+自从可以使用 Map 之后，开发者们开始毫">
+<meta property="og:type" content="article">
+<meta property="og:title" content="辨析 Sass 中的 Map 和 List">
+<meta property="og:url" content="http://yoursite.com/2015/10/21/demo/index.html">
+<meta property="og:site_name" content="Jaco">
+<meta property="og:description" content="如果你使用过 Sass 3.3 之前的版本，那么你一定对那段时光颇有感触，那时候没有现如今这么好的条件，那时候的 Map 还只能用多重列表（lists of list）来模拟。多重列表可以实现复杂数据的嵌套定义，但却不是以键值对的形式实现的，所有当我们需要获取其中特定的某一项时就会比较麻烦。Map 这种数据类型天生就是基于键值对的形式，非常便于组织数据。
+自从可以使用 Map 之后，开发者们开始毫">
+<meta property="og:updated_time" content="2016-01-30T02:52:28.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="辨析 Sass 中的 Map 和 List">
+<meta name="twitter:description" content="如果你使用过 Sass 3.3 之前的版本，那么你一定对那段时光颇有感触，那时候没有现如今这么好的条件，那时候的 Map 还只能用多重列表（lists of list）来模拟。多重列表可以实现复杂数据的嵌套定义，但却不是以键值对的形式实现的，所有当我们需要获取其中特定的某一项时就会比较麻烦。Map 这种数据类型天生就是基于键值对的形式，非常便于组织数据。
+自从可以使用 Map 之后，开发者们开始毫">
+  
+    <link rel="alternate" href="/atom.xml" title="Jaco" type="application/atom+xml">
+  
+  
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
 </head>
 
-  <body>
-    <header>
-      <div>
-		
-			<div id="imglogo">
-				<a href="/"><img src="/img/logo.svg" alt="Jaco" title="Jaco"/></a>
-			</div>
-			
-			<div id="textlogo">
-				<h1 class="site-name"><a href="/" title="Jaco">Jaco</a></h1>
-				<h2 class="blog-motto">搬砖科学家</h2>
-			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜單">
-			</a></div>
-			<nav class="animated">
-				<ul>
-					
-						<li><a href="/">Home</a></li>
-					
-						<li><a href="/archives">Archives</a></li>
-					
-					<li>
-					
-					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
-						<label>Search</label>
-						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
-						<input type="hidden" name="q" value="site:yoursite.com">
-					</form>
-					
-					</li>
-				</ul>
-			</nav>			
-</div>
-
-    </header>
-    <div id="container">
-      <div id="main" class="post" itemscope itemprop="blogPost">
-	<article itemprop="articleBody"> 
-		<header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/10/21/demo/" title="辨析 Sass 中的 Map 和 List" itemprop="url">辨析 Sass 中的 Map 和 List</a>
-  </h1>
-  <p class="article-author">By
-    
-      <a href="http://yoursite.com" title="Jaco">Jaco</a>
-    </p>
-  <p class="article-time">
-    <time datetime="2015-10-21T02:34:12.000Z" itemprop="datePublished">2015-10-21</time>
-    更新日期:<time datetime="2016-01-30T02:52:28.000Z" itemprop="dateModified">2016-01-30</time>
-    
-  </p>
+<body>
+  <div class="wrapper">
+    <header id="header">
+  <div class="title">
+    <h1><a href="/">Jaco</a></h1>
+    <p><a href="/">搬砖科学家</a></p>
+  </div>
+  <nav class="nav">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+      
+        <li><a href="/atom.xml">RSS</a></li>
+      
+    </ul>
+    <div class="clearfix"></div>
+  </nav>
+  <div class="clearfix"></div>
 </header>
-	<div class="article-content">
-		
-		
-		<div id="toc" class="toc-article">
-			<strong class="toc-title">文章目錄</strong>
-		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#u6D4B_u8BD5_u8868_u683C"><span class="toc-number">1.</span> <span class="toc-text">测试表格</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u8BED_u6CD5_u6BD4_u8F83"><span class="toc-number">2.</span> <span class="toc-text">语法比较</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#undefined"><span class="toc-number">2.0.0.1.</span> <span class="toc-text">测试标题</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Map__u8BED_u6CD5"><span class="toc-number">2.0.1.</span> <span class="toc-text">Map 语法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u591A_u91CD_u5217_u8868_u8BED_u6CD5"><span class="toc-number">2.0.2.</span> <span class="toc-text">多重列表语法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u904D_u5386_u6BD4_u8F83"><span class="toc-number">3.</span> <span class="toc-text">遍历比较</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#undefined"><span class="toc-number">3.0.0.1.</span> <span class="toc-text">测试标题</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u904D_u5386_Map"><span class="toc-number">3.0.1.</span> <span class="toc-text">遍历 Map</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u904D_u5386_u591A_u91CD_u5217_u8868"><span class="toc-number">3.0.2.</span> <span class="toc-text">遍历多重列表</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u614E_u7528_u591A_u91CD_u5217_u8868"><span class="toc-number">4.</span> <span class="toc-text">慎用多重列表</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#undefined"><span class="toc-number">4.0.0.1.</span> <span class="toc-text">测试标题</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u9057_u6F0F_u952E_u503C"><span class="toc-number">4.0.1.</span> <span class="toc-text">遗漏键值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u67E5_u627E_u7279_u5B9A_u5217_u8868"><span class="toc-number">4.0.2.</span> <span class="toc-text">查找特定列表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u7F3A_u5C11_u539F_u751F_u7684_Map__u51FD_u6570"><span class="toc-number">4.0.3.</span> <span class="toc-text">缺少原生的 Map 函数</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u603B_u7ED3"><span class="toc-number">5.</span> <span class="toc-text">总结</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#undefined"><span class="toc-number">5.0.0.1.</span> <span class="toc-text">Test Title</span></a></li></ol></li></ol></li></ol></li></ol>
-		</div>
-		
-		<p>如果你使用过 Sass 3.3 之前的版本，那么你一定对那段时光颇有感触，那时候没有现如今这么好的条件，那时候的 Map 还只能用多重列表（lists of list）来模拟。多重列表可以实现复杂数据的嵌套定义，但却不是以键值对的形式实现的，所有当我们需要获取其中特定的某一项时就会比较麻烦。Map 这种数据类型天生就是基于键值对的形式，非常便于组织数据。</p>
+    <div class="content"><article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <a href="/2015/10/21/demo/">
+  <time datetime="2015-10-21T02:34:12.000Z">
+    2015-10-21
+  </time>
+</a>
+    
+    
+  
+    <h1 class="title">辨析 Sass 中的 Map 和 List</h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <p>如果你使用过 Sass 3.3 之前的版本，那么你一定对那段时光颇有感触，那时候没有现如今这么好的条件，那时候的 Map 还只能用多重列表（lists of list）来模拟。多重列表可以实现复杂数据的嵌套定义，但却不是以键值对的形式实现的，所有当我们需要获取其中特定的某一项时就会比较麻烦。Map 这种数据类型天生就是基于键值对的形式，非常便于组织数据。</p>
 <p>自从可以使用 Map 之后，开发者们开始毫无顾忌地定义 Map 存储数据，比如断点宽度、颜色值、栅格布局等等响应式排版的细节，都被一股脑的塞进了 Map 中。</p>
 <p>那么，有了 Map 之后，我们还有必要使用 List 吗？可能某些人会觉得为了保持向后兼容应该继续使用多重列表模拟 Map，因为可能有些开发者仍然在使用老版本的 Sass 编译器，但实际上，这是多此一举了，Sass 的版本通常由 <code>package.json</code> 或者其他同类型的项目配置文件所控制，往往只需一条命令（<code>gem update sass</code>）即可更新 Sass 的版本，因此基本上无需考虑对老版本的兼容问题。</p>
 <a id="more"></a>
@@ -166,223 +157,50 @@
 <h2 id="u603B_u7ED3"><a href="#u603B_u7ED3" class="headerlink" title="总结"></a>总结</h2><div class="note unreleased"><br>    <h5>Test Title</h5><br>    <p>相比起列表来说，Key-Value 模型的 Map 显然更有力量，原生的 Sass Map 函数更是提供了强力的数据查找和验证工具。</p><br></div>
 
 <p>虽然多重列表代码量少，但并不能像 Map 一样进行错误检查或验证参数。在大多数时候，相比较多重列表而言，我相信 Map 是更好的选择。如果是为了更少的代码量和其他简单地调用，那么我偶尔会用用多重列表，但是从项目的宏观控制和数据存储方面显然更优秀。</p>
-  
-	</div>
-		<footer class="article-footer clearfix">
 
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/css/">css</a>
+    
   </div>
-
-
-
-
-<div class="article-share" id="share">
-
-  <div data-url="http://yoursite.com/2015/10/21/demo/" data-title="辨析 Sass 中的 Map 和 List | Jaco" data-tsina="null" class="share clearfix">
-  </div>
-
-</div>
-</footer>   	       
-	</article>
-	
-<nav class="article-nav clearfix">
- 
- <div class="prev" >
- <a href="/2016/01/30/Scala-Questions/" title="Scala Questions">
-  <strong>PREVIOUS:</strong><br/>
-  <span>
-  Scala Questions</span>
-</a>
-</div>
-
-
-</nav>
-
-	
-</div>  
-      <div class="openaside"><a class="navbutton" href="#" title="顯示側邊欄"></a></div>
-
-  <div id="toc" class="toc-aside">
-  <strong class="toc-title">文章目錄</strong>
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#u6D4B_u8BD5_u8868_u683C"><span class="toc-number">1.</span> <span class="toc-text">测试表格</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u8BED_u6CD5_u6BD4_u8F83"><span class="toc-number">2.</span> <span class="toc-text">语法比较</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#undefined"><span class="toc-number">2.0.0.1.</span> <span class="toc-text">测试标题</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Map__u8BED_u6CD5"><span class="toc-number">2.0.1.</span> <span class="toc-text">Map 语法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u591A_u91CD_u5217_u8868_u8BED_u6CD5"><span class="toc-number">2.0.2.</span> <span class="toc-text">多重列表语法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u904D_u5386_u6BD4_u8F83"><span class="toc-number">3.</span> <span class="toc-text">遍历比较</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#undefined"><span class="toc-number">3.0.0.1.</span> <span class="toc-text">测试标题</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u904D_u5386_Map"><span class="toc-number">3.0.1.</span> <span class="toc-text">遍历 Map</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u904D_u5386_u591A_u91CD_u5217_u8868"><span class="toc-number">3.0.2.</span> <span class="toc-text">遍历多重列表</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u614E_u7528_u591A_u91CD_u5217_u8868"><span class="toc-number">4.</span> <span class="toc-text">慎用多重列表</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#undefined"><span class="toc-number">4.0.0.1.</span> <span class="toc-text">测试标题</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u9057_u6F0F_u952E_u503C"><span class="toc-number">4.0.1.</span> <span class="toc-text">遗漏键值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u67E5_u627E_u7279_u5B9A_u5217_u8868"><span class="toc-number">4.0.2.</span> <span class="toc-text">查找特定列表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u7F3A_u5C11_u539F_u751F_u7684_Map__u51FD_u6570"><span class="toc-number">4.0.3.</span> <span class="toc-text">缺少原生的 Map 函数</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u603B_u7ED3"><span class="toc-number">5.</span> <span class="toc-text">总结</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#undefined"><span class="toc-number">5.0.0.1.</span> <span class="toc-text">Test Title</span></a></li></ol></li></ol></li></ol></li></ol>
-  </div>
-
-<div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="隱藏側邊欄"></a></div>
-<aside class="clearfix">
-
-  
-<div class="categorieslist">
-	<p class="asidetitle">分類</p>
-		<ul>
-		
-			<li><a href="/categories/English/" title="English">English<sup>1</sup></a></li>
-		
-			<li><a href="/categories/Scala/" title="Scala">Scala<sup>1</sup></a></li>
-		
-		</ul>
-</div>
-
-
-  
-<div class="tagslist">
-	<p class="asidetitle">標簽</p>
-		<ul class="clearfix">
-		
-			<li><a href="/tags/English/" title="English">English<sup>1</sup></a></li>
-		
-			<li><a href="/tags/Scala/" title="Scala">Scala<sup>1</sup></a></li>
-		
-			<li><a href="/tags/css/" title="css">css<sup>1</sup></a></li>
-		
-		</ul>
-</div>
-
-
-  <div class="rsspart">
-	<a href="null" target="_blank" title="rss">RSS 訂閱</a>
-</div>
-
-</aside>
-</div>
-    </div>
-    <footer><div id="footer" >
-	
-	<div class="line">
-		<span></span>
-		<div class="author"></div>
-	</div>
-	
-	
-	<div class="social-font clearfix">
-		
-		
-		
-		
-		
-	</div>
-		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2016 
-		
-		<a href="http://yoursite.com" target="_blank" title="Jaco">Jaco</a>
-		
-		</p>
-</div>
-</footer>
-    <script src="/js/jquery-2.1.0.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){ 
-  $('.navbar').click(function(){
-    $('header nav').toggleClass('shownav');
-  });
-  var myWidth = 0;
-  function getSize(){
-    if( typeof( window.innerWidth ) == 'number' ) {
-      myWidth = window.innerWidth;
-    } else if( document.documentElement && document.documentElement.clientWidth) {
-      myWidth = document.documentElement.clientWidth;
-    };
-  };
-  var m = $('#main'),
-      a = $('#asidepart'),
-      c = $('.closeaside'),
-      o = $('.openaside');
-  $(window).resize(function(){
-    getSize(); 
-    if (myWidth >= 1024) {
-      $('header nav').removeClass('shownav');
-    }else
-    {
-      m.removeClass('moveMain');
-      a.css('display', 'block').removeClass('fadeOut');
-      o.css('display', 'none');
+  <footer>
+    
       
-      $('#toc.toc-aside').css('display', 'none');
-        
-    }
-  });
-  c.click(function(){
-    a.addClass('fadeOut').css('display', 'none');
-    o.css('display', 'block').addClass('fadeIn');
-    m.addClass('moveMain');
-  });
-  o.click(function(){
-    o.css('display', 'none').removeClass('beforeFadeIn');
-    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
-    m.removeClass('moveMain');
-  });
-  $(window).scroll(function(){
-    o.css("top",Math.max(80,260-$(this).scrollTop()));
-  });
-});
-</script>
+      
+  <div class="tags">
+    <a class="tags-link" href="/tags/css/">css</a>
+  </div>
 
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+</div>
+  </div>
+  <footer id="footer"><div class="copyright">
+  
+  &copy; 2016 <a href="/">Jaco</a>
+  
+</div>
+<div class="theme-copyright">
+  Theme by <a href="https://github.com/orderedlist" target="_blank">orderedlist</a>
+   | 
+  Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a>
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+<script src="/js/scale.fix.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
 <script type="text/javascript">
-$(document).ready(function(){ 
-  var ai = $('.article-content>iframe'),
-      ae = $('.article-content>embed'),
-      t  = $('#toc'),
-      h  = $('article h2')
-      ah = $('article h2'),
-      ta = $('#toc.toc-aside'),
-      o  = $('.openaside'),
-      c  = $('.closeaside');
-  if(ai.length>0){
-    ai.wrap('<div class="video-container" />');
-  };
-  if(ae.length>0){
-   ae.wrap('<div class="video-container" />');
-  };
-  if(ah.length==0){
-    t.css('display','none');
-  }else{
-    c.click(function(){
-      ta.css('display', 'block').addClass('fadeIn');
-    });
-    o.click(function(){
-      ta.css('display', 'none');
-    });
-    $(window).scroll(function(){
-      ta.css("top",Math.max(140,320-$(this).scrollTop()));
-    });
-  };
-});
+  (function($){
+    $('.fancybox').fancybox();
+  })(jQuery);
 </script>
 
-
-<script type="text/javascript">
-$(document).ready(function(){ 
-  var $this = $('.share'),
-      url = $this.attr('data-url'),
-      encodedUrl = encodeURIComponent(url),
-      title = $this.attr('data-title'),
-      tsina = $this.attr('data-tsina');
-  var html = [
-  '<a href="#" class="overlay" id="qrcode"></a>',
-  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
-  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
-  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
-  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
-  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
-  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
-  '<span title="Share to"></span>'
-  ].join('');
-  $this.append(html);
-  $('.article-share-qrcode').click(function(){
-    var imgSrc = $('#qrcode-pic').attr('data-src');
-    $('#qrcode-pic').attr('src', imgSrc);
-    $('#qrcode-pic').load(function(){
-        $('.qrcode strong').text(' ');
-    });
-  });
-});     
-</script>
-
-
-
-
-
-
-  </body>
+</body>
 </html>

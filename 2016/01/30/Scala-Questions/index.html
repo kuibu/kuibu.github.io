@@ -1,324 +1,134 @@
-
- <!DOCTYPE HTML>
-<html lang="zh-Hans">
+<!DOCTYPE HTML>
+<html>
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
   
-    <title>Scala Questions | Jaco</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
-    
+  <title>Scala Questions | Jaco</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  
     <meta name="author" content="Jaco">
-    
+  
+  
     <meta name="description" content="java 写的Iterable对象不能直接使用scala中的foreach语句遍历元素, 需要进行如下转换后才能使用foreach语句： 假如使用Java定义了一个实现了Iterable接口的数据类型Stack
- 12345678import scala.collection.JavaConvert">
-    
-    
-    
-    
-    
-    <link rel="icon" href="/img/favicon.ico">
-    
-    
-    <link rel="apple-touch-icon" href="/img/pacman.jpg">
-    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
-    
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
+ 12345678import scala.collection.JavaConverters._val sJava = new Stack[Integer]... // 对sJava">
+  
+  <meta name="description" content="java 写的Iterable对象不能直接使用scala中的foreach语句遍历元素, 需要进行如下转换后才能使用foreach语句： 假如使用Java定义了一个实现了Iterable接口的数据类型Stack
+ 12345678import scala.collection.JavaConverters._val sJava = new Stack[Integer]... // 对sJava">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Scala Questions">
+<meta property="og:url" content="http://yoursite.com/2016/01/30/Scala-Questions/index.html">
+<meta property="og:site_name" content="Jaco">
+<meta property="og:description" content="java 写的Iterable对象不能直接使用scala中的foreach语句遍历元素, 需要进行如下转换后才能使用foreach语句： 假如使用Java定义了一个实现了Iterable接口的数据类型Stack
+ 12345678import scala.collection.JavaConverters._val sJava = new Stack[Integer]... // 对sJava">
+<meta property="og:updated_time" content="2016-01-30T05:20:37.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Scala Questions">
+<meta name="twitter:description" content="java 写的Iterable对象不能直接使用scala中的foreach语句遍历元素, 需要进行如下转换后才能使用foreach语句： 假如使用Java定义了一个实现了Iterable接口的数据类型Stack
+ 12345678import scala.collection.JavaConverters._val sJava = new Stack[Integer]... // 对sJava">
+  
+    <link rel="alternate" href="/atom.xml" title="Jaco" type="application/atom+xml">
+  
+  
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
 </head>
 
-  <body>
-    <header>
-      <div>
-		
-			<div id="imglogo">
-				<a href="/"><img src="/img/logo.svg" alt="Jaco" title="Jaco"/></a>
-			</div>
-			
-			<div id="textlogo">
-				<h1 class="site-name"><a href="/" title="Jaco">Jaco</a></h1>
-				<h2 class="blog-motto">搬砖科学家</h2>
-			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜單">
-			</a></div>
-			<nav class="animated">
-				<ul>
-					
-						<li><a href="/">Home</a></li>
-					
-						<li><a href="/archives">Archives</a></li>
-					
-					<li>
-					
-					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
-						<label>Search</label>
-						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
-						<input type="hidden" name="q" value="site:yoursite.com">
-					</form>
-					
-					</li>
-				</ul>
-			</nav>			
-</div>
-
-    </header>
-    <div id="container">
-      <div id="main" class="post" itemscope itemprop="blogPost">
-	<article itemprop="articleBody"> 
-		<header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2016/01/30/Scala-Questions/" title="Scala Questions" itemprop="url">Scala Questions</a>
-  </h1>
-  <p class="article-author">By
-    
-      <a href="http://yoursite.com" title="Jaco">Jaco</a>
-    </p>
-  <p class="article-time">
-    <time datetime="2016-01-30T05:18:37.000Z" itemprop="datePublished">2016-01-30</time>
-    更新日期:<time datetime="2016-01-30T05:20:37.000Z" itemprop="dateModified">2016-01-30</time>
-    
-  </p>
+<body>
+  <div class="wrapper">
+    <header id="header">
+  <div class="title">
+    <h1><a href="/">Jaco</a></h1>
+    <p><a href="/">搬砖科学家</a></p>
+  </div>
+  <nav class="nav">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+      
+        <li><a href="/atom.xml">RSS</a></li>
+      
+    </ul>
+    <div class="clearfix"></div>
+  </nav>
+  <div class="clearfix"></div>
 </header>
-	<div class="article-content">
-		
-		
-		<div id="toc" class="toc-article">
-			<strong class="toc-title">文章目錄</strong>
-		
-		</div>
-		
-		<p>java 写的<em>Iterable</em>对象不能直接使用scala中的foreach语句遍历元素, 需要进行如下转换后才能使用foreach语句：<br> 假如使用Java定义了一个实现了<em>Iterable</em>接口的数据类型<em>Stack</em></p>
+    <div class="content"><article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <a href="/2016/01/30/Scala-Questions/">
+  <time datetime="2016-01-30T05:18:37.000Z">
+    2016-01-30
+  </time>
+</a>
+    
+    
+  
+    <h1 class="title">Scala Questions</h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <p>java 写的<em>Iterable</em>对象不能直接使用scala中的foreach语句遍历元素, 需要进行如下转换后才能使用foreach语句：<br> 假如使用Java定义了一个实现了<em>Iterable</em>接口的数据类型<em>Stack</em></p>
  <figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> scala.collection.<span class="type">JavaConverters</span>._</span><br><span class="line"><span class="keyword">val</span> sJava = <span class="keyword">new</span> <span class="type">Stack</span>[<span class="type">Integer</span>]</span><br><span class="line">... <span class="comment">// 对sJava  进行push、pop等操作。&lt;注&gt;转换后的sScala并不能使用sJava中的方法，操作必须在sJava这里进行。</span></span><br><span class="line"><span class="keyword">val</span> sScala = sJava.asScala</span><br><span class="line"><span class="keyword">for</span>( s &lt;- sScala)&#123;</span><br><span class="line">   ...</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
 <p> }</p>
-  
-	</div>
-		<footer class="article-footer clearfix">
 
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/Scala/">Scala</a>
+    
   </div>
-
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/Scala/">Scala</a>
-</div>
-
-
-
-<div class="article-share" id="share">
-
-  <div data-url="http://yoursite.com/2016/01/30/Scala-Questions/" data-title="Scala Questions | Jaco" data-tsina="null" class="share clearfix">
-  </div>
-
-</div>
-</footer>   	       
-	</article>
-	
-<nav class="article-nav clearfix">
- 
- <div class="prev" >
- <a href="/2016/01/30/skim/" title="美语中的略读">
-  <strong>PREVIOUS:</strong><br/>
-  <span>
-  美语中的略读</span>
-</a>
-</div>
-
-
-<div class="next">
-<a href="/2015/10/21/demo/"  title="辨析 Sass 中的 Map 和 List">
- <strong>NEXT:</strong><br/> 
- <span>辨析 Sass 中的 Map 和 List
-</span>
-</a>
-</div>
-
-</nav>
-
-	
-</div>  
-      <div class="openaside"><a class="navbutton" href="#" title="顯示側邊欄"></a></div>
-
-  <div id="toc" class="toc-aside">
-  <strong class="toc-title">文章目錄</strong>
-  
-  </div>
-
-<div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="隱藏側邊欄"></a></div>
-<aside class="clearfix">
-
-  
-<div class="categorieslist">
-	<p class="asidetitle">分類</p>
-		<ul>
-		
-			<li><a href="/categories/English/" title="English">English<sup>1</sup></a></li>
-		
-			<li><a href="/categories/Scala/" title="Scala">Scala<sup>1</sup></a></li>
-		
-		</ul>
-</div>
-
-
-  
-<div class="tagslist">
-	<p class="asidetitle">標簽</p>
-		<ul class="clearfix">
-		
-			<li><a href="/tags/English/" title="English">English<sup>1</sup></a></li>
-		
-			<li><a href="/tags/Scala/" title="Scala">Scala<sup>1</sup></a></li>
-		
-			<li><a href="/tags/css/" title="css">css<sup>1</sup></a></li>
-		
-		</ul>
-</div>
-
-
-  <div class="rsspart">
-	<a href="null" target="_blank" title="rss">RSS 訂閱</a>
-</div>
-
-</aside>
-</div>
-    </div>
-    <footer><div id="footer" >
-	
-	<div class="line">
-		<span></span>
-		<div class="author"></div>
-	</div>
-	
-	
-	<div class="social-font clearfix">
-		
-		
-		
-		
-		
-	</div>
-		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2016 
-		
-		<a href="http://yoursite.com" target="_blank" title="Jaco">Jaco</a>
-		
-		</p>
-</div>
-</footer>
-    <script src="/js/jquery-2.1.0.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){ 
-  $('.navbar').click(function(){
-    $('header nav').toggleClass('shownav');
-  });
-  var myWidth = 0;
-  function getSize(){
-    if( typeof( window.innerWidth ) == 'number' ) {
-      myWidth = window.innerWidth;
-    } else if( document.documentElement && document.documentElement.clientWidth) {
-      myWidth = document.documentElement.clientWidth;
-    };
-  };
-  var m = $('#main'),
-      a = $('#asidepart'),
-      c = $('.closeaside'),
-      o = $('.openaside');
-  $(window).resize(function(){
-    getSize(); 
-    if (myWidth >= 1024) {
-      $('header nav').removeClass('shownav');
-    }else
-    {
-      m.removeClass('moveMain');
-      a.css('display', 'block').removeClass('fadeOut');
-      o.css('display', 'none');
+  <footer>
+    
       
-      $('#toc.toc-aside').css('display', 'none');
-        
-    }
-  });
-  c.click(function(){
-    a.addClass('fadeOut').css('display', 'none');
-    o.css('display', 'block').addClass('fadeIn');
-    m.addClass('moveMain');
-  });
-  o.click(function(){
-    o.css('display', 'none').removeClass('beforeFadeIn');
-    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
-    m.removeClass('moveMain');
-  });
-  $(window).scroll(function(){
-    o.css("top",Math.max(80,260-$(this).scrollTop()));
-  });
-});
-</script>
+  <div class="categories">
+    <a class="categories-link" href="/categories/Scala/">Scala</a>
+  </div>
 
+      
+  <div class="tags">
+    <a class="tags-link" href="/tags/Scala/">Scala</a>
+  </div>
+
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+</div>
+  </div>
+  <footer id="footer"><div class="copyright">
+  
+  &copy; 2016 <a href="/">Jaco</a>
+  
+</div>
+<div class="theme-copyright">
+  Theme by <a href="https://github.com/orderedlist" target="_blank">orderedlist</a>
+   | 
+  Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a>
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+<script src="/js/scale.fix.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
 <script type="text/javascript">
-$(document).ready(function(){ 
-  var ai = $('.article-content>iframe'),
-      ae = $('.article-content>embed'),
-      t  = $('#toc'),
-      h  = $('article h2')
-      ah = $('article h2'),
-      ta = $('#toc.toc-aside'),
-      o  = $('.openaside'),
-      c  = $('.closeaside');
-  if(ai.length>0){
-    ai.wrap('<div class="video-container" />');
-  };
-  if(ae.length>0){
-   ae.wrap('<div class="video-container" />');
-  };
-  if(ah.length==0){
-    t.css('display','none');
-  }else{
-    c.click(function(){
-      ta.css('display', 'block').addClass('fadeIn');
-    });
-    o.click(function(){
-      ta.css('display', 'none');
-    });
-    $(window).scroll(function(){
-      ta.css("top",Math.max(140,320-$(this).scrollTop()));
-    });
-  };
-});
+  (function($){
+    $('.fancybox').fancybox();
+  })(jQuery);
 </script>
 
-
-<script type="text/javascript">
-$(document).ready(function(){ 
-  var $this = $('.share'),
-      url = $this.attr('data-url'),
-      encodedUrl = encodeURIComponent(url),
-      title = $this.attr('data-title'),
-      tsina = $this.attr('data-tsina');
-  var html = [
-  '<a href="#" class="overlay" id="qrcode"></a>',
-  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
-  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
-  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
-  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
-  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
-  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
-  '<span title="Share to"></span>'
-  ].join('');
-  $this.append(html);
-  $('.article-share-qrcode').click(function(){
-    var imgSrc = $('#qrcode-pic').attr('data-src');
-    $('#qrcode-pic').attr('src', imgSrc);
-    $('#qrcode-pic').load(function(){
-        $('.qrcode strong').text(' ');
-    });
-  });
-});     
-</script>
-
-
-
-
-
-
-  </body>
+</body>
 </html>
