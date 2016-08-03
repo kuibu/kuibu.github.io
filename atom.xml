@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title><![CDATA[Jaco]]></title>
-  <subtitle><![CDATA[搬砖科学家]]></subtitle>
+  <title><![CDATA[TensorFlow]]></title>
+  <subtitle><![CDATA[实验室]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2016-01-30T14:17:57.000Z</updated>
+  <updated>2016-04-22T08:02:02.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -13,6 +13,22 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[imlicit in Scala]]></title>
+    <link href="http://yoursite.com/2016/04/22/imlicit-in-Scala/"/>
+    <id>http://yoursite.com/2016/04/22/imlicit-in-Scala/</id>
+    <published>2016-04-22T07:58:56.000Z</published>
+    <updated>2016-04-22T08:02:02.000Z</updated>
+    <content type="html"><![CDATA[<h1 id="Scala_u4E2D_u7684_u9690_u5F0F_u8F6C_u6362"><a href="#Scala_u4E2D_u7684_u9690_u5F0F_u8F6C_u6362" class="headerlink" title="Scala中的隐式转换"></a>Scala中的隐式转换</h1><p>1.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="Scala_u4E2D_u7684_u9690_u5F0F_u8F6C_u6362"><a href="#Scala_u4E2D_u7684_u9690_u5F0F_u8F6C_u6362" class="headerlink" title="Scala中的隐式转]]>
+    </summary>
+    
+      <category term="Scala" scheme="http://yoursite.com/tags/Scala/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[美语中的略读]]></title>
